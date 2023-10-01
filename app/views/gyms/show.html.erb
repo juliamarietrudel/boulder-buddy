@@ -1,0 +1,56 @@
+<div class="container">
+
+  <div class="info-container">
+    <h1><%= @gym.name.capitalize %></h1>
+    <div class="info-boxes-container">
+      <div class="info-boxes">
+        <div class='info-title'>Address</div>
+        <div class="info-value"><%= @gym.address %></div>
+      </div>
+
+      <div class="info-boxes">
+        <div class='info-title'>Type</div>
+        <div class="info-value"><%= @gym.climbing_type %></div>
+      </div>
+
+      <% if @average_rating && @average_rating > 0%>
+        <div class="info-boxes">
+          <div class="info-title">Rating</div>
+          <div class="info-value"><%= @average_rating %>
+              <i class="fa-solid fa-star star"></i>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="review-container">
+      <div class="review-option-container">
+        <h3>Reviews</h3>
+        <%= link_to '#', id: 'toggle-form-link' do %>
+          <i class="fa-solid fa-plus"></i>
+        <% end %>
+      </div>
+      <div class="review-option-container">
+        <div class="hidden-form">
+          <%= render '/reviews/new', gyms: @gym, review: @review %>
+        </div>
+      </div>
+        <%= render 'reviews/index', reviews: @reviews %>
+    </div>
+
+
+
+      <%= link_to 'Edit', edit_path(@gym) %> |
+      <%= link_to 'Destroy', gym_path(@gym), data: {
+        turbo_method: :delete,
+                          turbo_confirm: "Are you sure?"
+                        } %>
+  </div>
+
+  <div class="map-container">
+    <div style="width: 100%; height: 550px;"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
+</div>

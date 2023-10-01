@@ -1,0 +1,8 @@
+<ul>
+  <% @gyms.each_with_index do |gym, index| %>
+    <li class='list-items'><%= link_to gym.name.capitalize, gym_path(gym) %></li>
+  <% end %>
+</ul>
+
+<br>
+<div class="add-button"><%= link_to 'Add your own gym', new_path %></div>

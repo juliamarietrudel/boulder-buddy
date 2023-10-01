@@ -1,0 +1,45 @@
+<%= form_with model: [@gym, @review] do |form| %>
+  <div class="cards">
+    <div class="card">
+      <div class="element">
+        <%= form.label :comment, 'Comment' %>
+        <%= form.text_field :comment, class: 'input-field' %>
+      </div>
+      <div class="alert">
+        <% @gym.errors.full_messages_for(:comment).each do |message| %>
+          <%= message %>
+        <% end %>
+      </div>
+    </div>
+    <div class="card">
+      <div class="element">
+        <%= form.label :rating, class: 'rating'%>
+        <%= form.text_field :rating, class: 'hidden' %>
+        <div class="star-rating">
+          <label for="5-stars" class="star" data-index='1'><i class="fa-regular fa-star hover-icon "></i></label>
+          <label for="4-stars" class="star" data-index='2'><i class="fa-regular fa-star hover-icon"></i></label>
+          <label for="3-stars" class="star" data-index='3'><i class="fa-regular fa-star hover-icon"></i></label>
+          <label for="2-stars" class="star" data-index='4'><i class="fa-regular fa-star hover-icon"></i></label>
+          <label for="1-star" class="star" data-index='5'><i class="fa-regular fa-star hover-icon"></i></label>
+        </div>
+      </div>
+      <div class="alert">
+        <% @review.errors.full_messages_for(:rating).each do |message| %>
+          <%= message %>
+        <% end %>
+      </div>
+    </div>
+    <div class="card">
+      <div class="element">
+        <%= form.label :user, 'User' %>
+        <%= form.text_field :user %>
+      </div>
+      <div class="alert">
+        <% @gym.errors.full_messages_for(:user).each do |message| %>
+          <%= message %>
+        <% end %>
+      </div>
+    </div>
+    <%= form.submit class: 'submit' %>
+  </div>
+<% end %>

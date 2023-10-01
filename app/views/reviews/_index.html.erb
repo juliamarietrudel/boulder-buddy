@@ -1,0 +1,21 @@
+<ul class = 'review-container'>
+  <% @reviews.each do |r| %>
+    <div class="review">
+      <div class="review-box-container">
+        <div class="info-boxes">
+            <div class="info-value"><%= r.comment %></div>
+        </div>
+        <div class="info-boxes">
+            <div class="info-value"><%= r.rating %>
+                <i class="fa-solid fa-star star"></i>
+            </div>
+          </div>
+      </div>
+      <div class="review-box-container">
+        <div class="info-boxes">
+          <div class="info-value info-user"> <%= r.user %></div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</ul>

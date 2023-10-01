@@ -1,0 +1,185 @@
+* {
+  padding: 0;
+  margin: 0
+}
+
+body {
+  font-family: 'Montserrat';
+  font-size: 10px;
+}
+
+.body {
+  padding: 50px 150px;
+}
+
+h1 {
+  font-size: 30px;
+  margin-bottom: 40px;
+}
+
+h2, h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.element {
+  padding: 10px 0 10px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.submit {
+  padding-top: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: white;
+  font-size: 10px;
+  font-family: 'Montserrat';
+}
+
+.submit:hover {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.alert {
+  padding-left: 59px;
+  color: rgb(180, 179, 179);
+  padding-bottom: 10px;
+}
+.card {
+  width: 200px;
+}
+
+a {
+  text-decoration: none;
+  color: black
+}
+
+.index {
+  padding-right: 5px;
+}
+
+.info-boxes {
+  display: flex;
+  padding-bottom: 8px;
+}
+
+.info-title {
+  font-weight: bolder;
+  width: 60px;
+  padding-bottom: 8px;
+}
+
+.navbar-container {
+  padding: 30px 150px;
+  border-bottom: 0.5px rgb(215, 214, 214) solid;
+  position: sticky;
+  top: 0;
+  background-color: rgb(19, 19, 19);
+  z-index: 1000;
+}
+
+.navbar-container a {
+  color: rgb(231, 230, 230);
+  font-size: 15px;
+  font-weight: lighter;
+  padding: 10px 0 10px 0;
+}
+
+.list-items {
+  /* margin-bottom: 10px; */
+}
+
+.add-button {
+  font-weight: bolder;
+}
+
+.capital-b {
+  font-weight: 600;
+}
+
+.custom-marker-class {
+  background-color: rgb(2, 2, 2);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.container {
+  display: flex;
+  justify-content:space-between;
+  width: 100%;
+  margin-top: 70px;
+}
+
+.map-container {
+  width: 450px;
+  height: 550px
+}
+
+.review {
+  border-bottom: rgba(0, 0, 0, 0.47) solid 0.3px;
+  padding: 20px 0 10px 0;
+}
+
+.info-boxes-container {
+  padding-bottom: 60px;
+}
+
+.star {
+  font-size: 7px;
+}
+
+.info-container {
+  width: 40%;
+}
+
+.info-value {
+  padding-right: 20px;
+}
+
+.info-user {
+  font-style: italic;
+  font-size: 8px;
+}
+
+.start-icon {
+  background-color: red;
+}
+
+.review-option-container {
+  display: flex;
+  align-items: center;
+}
+
+.fa-plus {
+  padding: 0 0 20px 10px;
+  font-size: 15px;
+}
+
+.hidden-form {
+  display: none;
+}
+
+.input-field {
+  border: none;
+  outline: none;
+}
+
+.rating {
+  display: none;
+}
+
+.hover-icon:before {
+  content: "\f006";
+}
+
+.hover-icon:hover:before {
+  content: "\f005";
+}

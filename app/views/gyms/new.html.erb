@@ -1,0 +1,40 @@
+<h2>Add a new gym</h2>
+
+<%= form_with model: @gym do |form| %>
+  <div class="cards">
+    <div class="card">
+      <div class="element">
+        <%= form.label :name, class: 'a'%>
+        <%= form.text_field :name %>
+      </div>
+      <div class="alert">
+        <% @gym.errors.full_messages_for(:name).each do |message| %>
+          <%= message %>
+        <% end %>
+      </div>
+    </div>
+    <div class="card">
+      <div class="element">
+        <%= form.label :address %>
+        <%= form.text_field :address %>
+      </div>
+      <div class="alert">
+        <% @gym.errors.full_messages_for(:address).each do |message| %>
+          <%= message %>
+        <% end %>
+      </div>
+    </div>
+    <div class="card">
+      <div class="element">
+        <%= form.label :climbing_type, 'Type' %>
+        <%= form.text_field :climbing_type %>
+      </div>
+      <div class="alert">
+        <% @gym.errors.full_messages_for(:climbing_type).each do |message| %>
+          <%= message %>
+        <% end %>
+      </div>
+    </div>
+    <%= form.submit class: 'submit' %>
+  </div>
+<% end %>
