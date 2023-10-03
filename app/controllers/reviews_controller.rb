@@ -3,6 +3,7 @@ class ReviewsController < ApplicationController
     @gym = Gym.find(params[:gym_id])
     @reviews = @gym.reviews
     redirect_to @gym
+    # @reviews = @gym.reviews.order(created_at: :desc).page(params[:page]).per(5)
   end
 
   def new
@@ -15,10 +16,10 @@ class ReviewsController < ApplicationController
     @gym = Gym.find(params[:gym_id])
     @review = Review.new(review_params)
     @review.gym = @gym
+    @review.user ||= Faker::Name.name
     if @review.save
       redirect_to @gym
     else
-      raise
       redirect_to gym_path(@gym), status: :see_other
     end
   end

@@ -1,0 +1,18 @@
+<!-- app/views/reviews/_review.html.erb -->
+<div class="review">
+  <div class="review-box-container">
+    <div class="info-boxes">
+      <div class="info-value"><%= review.comment %></div>
+    </div>
+    <div class="info-boxes">
+      <div><%= review.rating %>
+        <i class="fa-solid fa-star star"></i>
+      </div>
+    </div>
+  </div>
+  <div class="review-box-container">
+    <div class="info-boxes">
+      <div class="info-value info-user"> <%= review.user %></div>
+    </div>
+  </div>
+</div>

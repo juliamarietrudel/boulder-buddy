@@ -2,4 +2,18 @@
   <%= link_to gyms_path do %>
     <span class='capital-b'>B</span>oulder<span class='capital-b'>B</span>uddy
   <% end %>
+  <div class="search-bar-container">
+    <div class="search-form-container hidden">
+      <%= form_with method: :get, id: 'search-form' do %>
+        <%= text_field_tag :query,
+            params[:query],
+            id: 'search-input'
+        %>
+        <%= button_tag type: 'submit', class: 'hidden hidden-button' do %>
+          <i class="fas fa-search"></i>
+        <% end %>
+      <% end %>
+    </div>
+      <i class="fas fa-search" id="search-icon"></i>
+  </div>
 </div>

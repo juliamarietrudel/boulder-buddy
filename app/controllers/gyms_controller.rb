@@ -1,23 +1,29 @@
 class GymsController < ApplicationController
   def index
-    @gyms = Gym.all
-    @markers = @gyms.geocoded.map do |gym|
-      {
-        lat: gym.latitude,
-        lng: gym.longitude
-      }
+    @gyms = if params[:query].present?
+              Gym.where('address LIKE ? ', "%#{params[:query]}%")
+            else
+              Gym.all
+            end
+    @markers = @gyms.map do |gym|
+    get_markers(gym)
     end
+  end
+
+  def search
+    @gyms = if params[:query].present?
+              redirect_to gyms_path(query: params[:query])
+            else
+              redirect_to gyms_path
+            end
   end
 
   def show
     @gym = Gym.find(params[:id])
     @review = Review.new
+    @reviews = @gym.reviews.order(created_at: :desc).page(params[:page]).per(5)
     @average_rating = average_rating(@gym)
-    @markers = [{
-      lat: @gym.latitude,
-      lng: @gym.longitude
-    }]
-    @reviews = @gym.reviews
+    @markers = [get_markers(@gym)]
   end
 
   def new
@@ -60,16 +66,22 @@ class GymsController < ApplicationController
   end
 
   def average_rating(gym)
-    @reviews = @gym.reviews
+    @reviews = gym.reviews
     num_reviews = @reviews.count
     sum = 0
     if num_reviews != []
       @reviews.each do |review|
-        r = review.rating
-        sum += r
+        sum += review.rating
       end
     end
-    sum = sum / num_reviews if num_reviews != 0
+    sum /= num_reviews if num_reviews != 0
     sum.round(1)
+  end
+
+  def get_markers(gym)
+    {
+      lat: gym.latitude,
+      lng: gym.longitude
+    }
   end
 end

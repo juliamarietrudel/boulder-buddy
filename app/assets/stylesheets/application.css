@@ -1,3 +1,4 @@
+/* MAIN */
 * {
   padding: 0;
   margin: 0
@@ -9,9 +10,10 @@ body {
 }
 
 .body {
-  padding: 50px 150px;
+  padding: 100px 150px;
 }
 
+/* TEXT */
 h1 {
   font-size: 30px;
   margin-bottom: 40px;
@@ -22,47 +24,44 @@ h2, h3 {
   margin-bottom: 20px;
 }
 
+a {
+  text-decoration: none;
+  color: black
+}
+
+/* LISTS */
 ul {
   list-style-type: none;
   padding: 0;
 }
 
+li{
+  margin-bottom: 8px;
+}
+
+/* FORMS */
 .element {
   padding: 10px 0 10px 0;
   display: flex;
   justify-content: space-between;
 }
 
-.submit {
-  padding-top: 10px;
-  border: none;
-  border-radius: 5px;
-  background-color: white;
-  font-size: 10px;
-  font-family: 'Montserrat';
-}
-
-.submit:hover {
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.alert {
-  padding-left: 59px;
-  color: rgb(180, 179, 179);
-  padding-bottom: 10px;
-}
-.card {
+.new-gym-element {
   width: 200px;
 }
 
-a {
-  text-decoration: none;
-  color: black
+#form-container {
+  width: 500px;
 }
 
-.index {
-  padding-right: 5px;
+.main-form-container {
+  padding: 10px 0 50px 0;
+  display: flex;
+  width: 100%;
+}
+
+.submit-container {
+  align-content: center;
 }
 
 .info-boxes {
@@ -76,6 +75,39 @@ a {
   padding-bottom: 8px;
 }
 
+.element-container {
+  width: 200px;
+}
+
+.hidden-form {
+  display: none;
+}
+
+  /* form alert messages */
+  .alert {
+    padding-left: 59px;
+    color: rgb(180, 179, 179);
+    padding-bottom: 10px;
+  }
+
+  /* form submit button */
+  .submit {
+    padding-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    font-size: 10px;
+    font-family: 'Montserrat';
+    font-weight: bold;
+  }
+
+  .submit:hover {
+    cursor: pointer;
+    color: rgb(84, 83, 83);
+  }
+
+/* NAVBAR */
+
 .navbar-container {
   padding: 30px 150px;
   border-bottom: 0.5px rgb(215, 214, 214) solid;
@@ -83,6 +115,8 @@ a {
   top: 0;
   background-color: rgb(19, 19, 19);
   z-index: 1000;
+  display: flex;
+  justify-content: space-between;
 }
 
 .navbar-container a {
@@ -92,22 +126,23 @@ a {
   padding: 10px 0 10px 0;
 }
 
-.list-items {
-  /* margin-bottom: 10px; */
+.capital-b {
+  font-weight: 600;
+}
+
+.search-bar-container {
+  padding: 10px 0;
 }
 
 .add-button {
   font-weight: bolder;
 }
 
-.capital-b {
-  font-weight: 600;
-}
-
+/* MAP */
 .custom-marker-class {
-  background-color: rgb(2, 2, 2);
-  width: 10px;
-  height: 10px;
+  border: black 1px solid;
+  width: 3px;
+  height: 3px;
   border-radius: 50%;
 }
 
@@ -115,7 +150,6 @@ a {
   display: flex;
   justify-content:space-between;
   width: 100%;
-  margin-top: 70px;
 }
 
 .map-container {
@@ -128,20 +162,13 @@ a {
   padding: 20px 0 10px 0;
 }
 
-.info-boxes-container {
-  padding-bottom: 60px;
-}
-
-.star {
-  font-size: 7px;
-}
 
 .info-container {
   width: 40%;
 }
 
 .info-value {
-  padding-right: 20px;
+  margin-right: 20px;
 }
 
 .info-user {
@@ -149,25 +176,26 @@ a {
   font-size: 8px;
 }
 
-.start-icon {
-  background-color: red;
-}
-
 .review-option-container {
   display: flex;
   align-items: center;
 }
 
-.fa-plus {
+.plus-icon {
   padding: 0 0 20px 10px;
   font-size: 15px;
 }
 
-.hidden-form {
-  display: none;
+.plus-icon:hover {
+  color: rgb(84, 83, 83);
 }
 
-.input-field {
+.input-fields {
+  border: none;
+  outline: none;
+}
+
+.gym-field {
   border: none;
   outline: none;
 }
@@ -176,10 +204,105 @@ a {
   display: none;
 }
 
-.hover-icon:before {
-  content: "\f006";
+.hidden {
+  display: none;
 }
 
-.hover-icon:hover:before {
-  content: "\f005";
+.info-boxes-container {
+  padding-bottom: 60px;
+}
+
+
+/* STAR RATING */
+
+.star, .star:hover ~ .star {
+  color: #222;
+  text-shadow: none;
+  transition: color 200ms,
+  text-shadow 200ms;
+  transition-delay: 0;
+  font-size: 7px;
+}
+.star:hover {
+  color: rgb(213, 182, 2);
+  cursor: pointer;
+}
+
+.rate {
+  width: 200px;
+}
+.rate:hover i{
+  color: rgb(213, 182, 2);
+  text-shadow: rgba(213, 181, 2, 0.352) 0 0 10px;
+}
+
+.select-star {
+  color: rgb(213, 182, 2);
+}
+
+
+.index-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.red {
+  font-weight: bolder;
+}
+
+.background-color-red {
+  background-color: black;
+}
+
+.edit-remove-container {
+  padding: 10px 0 20px 0;
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+
+#plus-gym {
+  padding:0;
+}
+
+#search-icon {
+  color: white;
+  cursor: pointer;
+}
+
+.hidden-button {
+  color: white;
+  cursor: pointer;
+}
+
+.search-bar-container {
+  display: flex;
+}
+
+#search-input {
+  border-radius: 5px;
+  padding: 4px;
+  margin: 0 5px;
+  background-color: rgb(19, 19, 19);
+  color: white;
+  font-weight: lighter;
+  outline: none;
+  border:none;
+}
+
+#search-input:focus {
+  outline: none;
+  border:none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
 }

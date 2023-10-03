@@ -1,6 +1,6 @@
 <%= form_with model: @gym do |form| %>
   <div class="cards">
-    <div class="card">
+    <div class="element-container">
       <div class="element">
         <%= form.label :name, class: 'a'%>
         <%= form.text_field :name %>
@@ -11,7 +11,7 @@
         <% end %>
       </div>
     </div>
-    <div class="card">
+    <div class="element-container">
       <div class="element">
         <%= form.label :address %>
         <%= form.text_field :address %>
@@ -22,7 +22,7 @@
         <% end %>
       </div>
     </div>
-    <div class="card">
+    <div class="element-container">
       <div class="element">
         <%= form.label :climbing_type, 'Type' %>
         <%= form.text_field :climbing_type %>

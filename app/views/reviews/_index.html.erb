@@ -1,4 +1,4 @@
-<ul class = 'review-container'>
+<ul class='review-container'>
   <% @reviews.each do |r| %>
     <div class="review">
       <div class="review-box-container">
@@ -6,7 +6,7 @@
             <div class="info-value"><%= r.comment %></div>
         </div>
         <div class="info-boxes">
-            <div class="info-value"><%= r.rating %>
+            <div><%= r.rating %>
                 <i class="fa-solid fa-star star"></i>
             </div>
           </div>

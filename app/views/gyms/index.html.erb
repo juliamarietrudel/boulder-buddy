@@ -1,8 +1,21 @@
-<ul>
-  <% @gyms.each_with_index do |gym, index| %>
-    <li class='list-items'><%= link_to gym.name.capitalize, gym_path(gym) %></li>
-  <% end %>
-</ul>
-
+<div class="index-container">
+  <div class="index-container-info">
+    <h2>Most Popular Gyms</h2>
+    <ul>
+      <% @gyms.each_with_index do |gym, index| %>
+        <li><%= link_to gym.name.capitalize, gym_path(gym), class: 'list-items', data: { marker_id: "marker-#{index}" } %></li>
+      <% end %>
+    </ul>
+    <%= link_to new_gym_path, id: 'toggle-form-link' do %>
+      <i class="fa-solid fa-plus plus-icon" id="plus-gym"></i>
+    <% end %>
+  </div>
+  <div class="map-container">
+    <div style="width: 100%; height: 550px;"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
+</div>
 <br>
-<div class="add-button"><%= link_to 'Add your own gym', new_path %></div>

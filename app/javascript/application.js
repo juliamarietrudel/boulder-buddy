@@ -2,3 +2,7 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 import './toggle_form'
+import './star_rating'
+import './form_focus'
+import './index_hover'
+import './search_bar'

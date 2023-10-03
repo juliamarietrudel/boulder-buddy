@@ -1,0 +1,7 @@
+<% if @reviews.next_page %>
+  $('#load-more-link').attr('href', '<%= gym_reviews_path(@gym, page: (@reviews.current_page + 1)) %>');
+<% else %>
+  $('#load-more-link').remove();
+<% end %>
+
+$('.review-container').append('<%= j render @reviews %>');

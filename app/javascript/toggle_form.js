@@ -3,11 +3,9 @@ document.addEventListener('DOMContentLoaded', function() {
   const form = document.querySelector('.hidden-form');
   const input_field = document.querySelector('.input-field')
 
-  console.log('Link:', link);
-  console.log('Form:', form);
-
   if (link && form) {
     link.addEventListener('click', function(e) {
+      console.log('a')
       e.preventDefault();
       if (form.style.display === 'none' || form.style.display === '') {
         form.style.display = 'block';
@@ -17,8 +15,6 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   }
-});
-
 
 document.querySelectorAll('.hover-icon').forEach(icon => {
   icon.addEventListener('mouseenter', function() {
@@ -44,4 +40,6 @@ document.querySelectorAll('.hover-icon').forEach(icon => {
       }
     });
   });
+});
+
 });
