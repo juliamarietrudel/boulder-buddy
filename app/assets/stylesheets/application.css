@@ -46,12 +46,45 @@ li{
   justify-content: space-between;
 }
 
-.new-gym-element {
-  width: 200px;
+.new-gym-label {
+  padding-right: 30px;
+  width: 500px;
+}
+
+#gym_climbing_type {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  appearance: none;
+}
+
+.custom-radio {
+  display: none;
+}
+
+.custom-type {
+  display: inline-block;
+  margin-right: 20px;
+  cursor: pointer;
+  color: grey;
+  cursor: pointer;
+}
+
+.custom-radio:checked + span {
+  font-weight: 600;
+  color: black;
+}
+
+.between {
+  margin-right: 20px;
+}
+
+.custom-type:hover {
+  color: rgb(4, 4, 4);
 }
 
 #form-container {
-  width: 500px;
+  width: 100px;
 }
 
 .main-form-container {
@@ -294,6 +327,7 @@ li{
   font-weight: lighter;
   outline: none;
   border:none;
+  width: 80px;
 }
 
 #search-input:focus {
@@ -305,4 +339,16 @@ button {
   background-color: transparent;
   border: none;
   outline: none;
+}
+
+.navbar-container {
+  /* padding: 30px 250px; */
+}
+
+.index-container {
+  padding: 0 90px;
+}
+
+.container {
+  /* padding: 0 100px 0 0; */
 }

@@ -22,3 +22,9 @@ Rails.application.routes.draw do
     resources :reviews, only: %w[index new create], as: :reviews
   end
 end
+
+
+
+# THINGS TO DO
+  # hover on map and name bold
+  # hide comments and deploy when click

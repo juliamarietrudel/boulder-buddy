@@ -6,7 +6,7 @@ class GymsController < ApplicationController
               Gym.all
             end
     @markers = @gyms.map do |gym|
-    get_markers(gym)
+      get_markers(gym)
     end
   end
 

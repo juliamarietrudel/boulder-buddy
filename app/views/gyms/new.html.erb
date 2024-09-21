@@ -1,10 +1,10 @@
 <h2>Add a new gym</h2>
 
-<%= form_with model: @gym do |form| %>
+<%= form_with model: @gym, class: 'new-gym-form' do |form| %>
   <div class="cards" id='form-container'>
     <div class="card">
       <div class="element new-gym-element">
-        <%= form.label :name%>
+        <%= form.label :name, class: 'new-gym-label' %>
         <%= form.text_field :name, class: 'input-fields' %>
       </div>
       <div class="alert">
@@ -15,7 +15,7 @@
     </div>
     <div class="card">
       <div class="element new-gym-element">
-        <%= form.label :address %>
+        <%= form.label :address, class: 'new-gym-label'  %>
         <%= form.text_field :address, class: 'gym-field' %>
       </div>
       <div class="alert">
@@ -26,8 +26,16 @@
     </div>
     <div class="card">
       <div class="element new-gym-element">
-        <%= form.label :climbing_type, 'Type' %>
-        <%= form.select :climbing_type, ['Boulder', 'Rope'], class: 'gym-field-dropdown' %>
+        <%= form.label :climbing_type, 'Type', class: 'new-gym-label'  %>
+        <label class="custom-type">
+          <%= form.radio_button :climbing_type, 'Boulder', class: 'custom-radio' %>
+          <span>Boulder</span>
+        </label>
+        <div class="between">|</div>
+        <label class="custom-type">
+          <%= form.radio_button :climbing_type, 'Rope', class: 'custom-radio' %>
+          <span>Rope</span>
+        </label>
       </div>
       <div class="alert">
         <% @gym.errors.full_messages_for(:climbing_type).each do |message| %>
@@ -38,3 +46,5 @@
     <%= form.submit class: 'submit' %>
   </div>
 <% end %>
+
+        <%# <%= form.radio_button :choice :climbing_type, ['Boulder', 'Rope'], class: 'gym-field-dropdown' %>

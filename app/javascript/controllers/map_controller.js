@@ -30,9 +30,10 @@ export default class extends Controller {
         el.classList.add('background-color-red');
       }
       new mapboxgl.Marker(el)
-        .setLngLat([ marker.lng, marker.lat ])
-        .addTo(this.map)
+      .setLngLat([ marker.lng, marker.lat ])
+      .addTo(this.map)
     })
+
   }
 
   #fitMapToMarkers() {
@@ -42,3 +43,5 @@ export default class extends Controller {
   }
 
 }
+
+console.log('testing')

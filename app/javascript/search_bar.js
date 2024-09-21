@@ -5,18 +5,16 @@ document.addEventListener("DOMContentLoaded", function() {
   const hiddenButton = document.querySelector('.hidden-button')
   const searchForm = document.querySelector('#search-form')
 
-  searchIcon.addEventListener("click", function(e) {
+  searchIcon.addEventListener("click", function() {
     searchIcon.style.display = "none";
     searchFormContainer.classList.remove('hidden')
     searchInput.focus();
     hiddenButton.classList.remove('hidden');
   });
 
-  searchForm.addEventListener('submit', function(e) {
-    e.preventDefault();
+  searchForm.addEventListener('submit', function() {
     searchIcon.style.display = "block";
     hiddenButton.classList.add('hidden');
-    searchFormContainer.classList.add('hidden')
-    searchInput.value = '';
+    searchFormContainer.classList.add('hidden');
   })
 })

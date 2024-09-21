@@ -12,8 +12,8 @@ require 'faker'
       rating: (1..5).to_a.sample,
       comment: Faker::Lorem.paragraph,
       user: Faker::Name.first_name,
-      gym: gym
     )
+    r.gym = gym
     r.save
   end
 end

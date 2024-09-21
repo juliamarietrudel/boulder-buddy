@@ -1,8 +1,4 @@
-<div class="navbar-container">
-  <%= link_to gyms_path do %>
-    <span class='capital-b'>B</span>oulder<span class='capital-b'>B</span>uddy
-  <% end %>
-    <div class="search-bar-container">
+  <div class="search-bar-container">
     <div class="search-form-container hidden">
       <%= form_with url: gyms_path, method: :get, id: 'search-form' do %>
         <%= text_field_tag :query,
@@ -16,5 +12,3 @@
     </div>
       <i class="fas fa-search" id="search-icon"></i>
   </div>
-
-</div>
